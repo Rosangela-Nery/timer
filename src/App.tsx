@@ -1,10 +1,19 @@
-import { useState } from 'react'
-import './App.css'
+import { ThemeProvider } from 'styled-components';
+import { Button } from './Button';
+import { GlobalStyle } from './styles/global';
+import { defaultTheme } from './styles/themes/default';
 
 export function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1>Hello World</h1>
+    <ThemeProvider theme={defaultTheme}>
+      <Button variant="primary" />
+      <Button variant="secondary" />
+      <Button variant="danger" />
+      <Button variant="sucess" />
+      <Button />
+
+      <GlobalStyle />
+    </ThemeProvider>
   )
 }
